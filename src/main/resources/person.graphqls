@@ -1,0 +1,41 @@
+schema {
+ query: Query
+ mutation: Mutation
+}
+
+type Person {
+		id: ID!,
+		name: String,
+		lastName: String,
+		birthDate: String,
+		contacts: [Contact]
+}
+
+type Contact {
+        type: String
+		number: String
+}
+
+input PersonInput {
+		id: Long,
+		name: String,
+		lastName: String,
+		birthDate: String,
+		contacts: [ContactInput]
+}
+
+input ContactInput {
+        type: String
+		number: String
+}
+
+type Query {
+		persons(input: PersonInput): [Person]
+		person(id: ID):Person
+}
+
+type Mutation {
+		createPerson(input: PersonInput):Person
+		deletePerson(id: ID): Boolean!
+		updatePerson(input: PersonInput): Person
+}

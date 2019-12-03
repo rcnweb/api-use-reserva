@@ -9,15 +9,15 @@ _Pré-requisitos:_
 
 ## Instalação
 
-1. Com odocker instalado em sua máquina para gerar a imagem da aplicação com o seguinte comando na raiz do projeto:
+1. Com o docker instalado em sua máquina para gerar a imagem da aplicação com o seguinte comando na raiz do projeto:
 
    `mvn clean package docker:build -Dmaven.test.skip=true`
    
-2. Uma vez a imagem criada você poderá rodar o container da aplicação com o seguinte comando:
+2. Com a imagem criada você poderá rodar o container da aplicação com o seguinte comando:
 
    `docker run -p 8080:8080 api-reserva-web`
 
-3. Uma vez o container levantado você vai poder acessar e testar pelas urls:
+3. Uma vez o container rodando você vai poder acessar e testar pelas urls:
 
 - `Entrypoint Rest >> http://localhost:8080/api-use-reserva/persons` 
 - `Entrypoint API Graphiql >> http://localhost:8080/graphiql` 
